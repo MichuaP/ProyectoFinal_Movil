@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2">
+
+    <TableLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2A000000"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/back_button"
+                    android:padding="5dp"
+                    android:src="@drawable/baseline_arrow_back_24" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="-25dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/abc" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conoce el Alfabeto"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="8dp" />
+
+        <TableLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonA"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:baselineAligned="false"
+                    android:text="Aa" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonB"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Bb" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonC"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Cc" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonD"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Dd" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonE"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ee" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonF"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ff" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonG"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Gg" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonH"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Hh" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonI"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ii" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonJ"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Jj" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonK"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Kk" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonL"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ll" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonM"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Mm" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonN"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Nn" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonÑ"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ññ" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonO"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Oo" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonP"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Pp" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonQ"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Qq" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonR"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Rr" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonS"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ss" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonT"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Tt" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonU"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Uu" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonV"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Vv" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonW"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Ww" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:gravity="center">
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonX"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Xx" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonY"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Yy" />
+
+                <com.pmcl.proyectofinal_movil.Alfabeto
+                    android:id="@+id/buttonZ"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:text="Zz" />
+            </TableRow>
+
+        </TableLayout>
+
+    </TableLayout>
+</ScrollView>

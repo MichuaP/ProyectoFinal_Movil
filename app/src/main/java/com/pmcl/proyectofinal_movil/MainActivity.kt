@@ -1,5 +1,6 @@
 package com.pmcl.proyectofinal_movil
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,5 +17,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // Inicia la Actividades
+        val intent = Intent(this, Actividades::class.java)
+        startActivity(intent)
+
+        // Termina MainActivity para que no se vuelva a mostrar
+        finish()
     }
 }
