@@ -1,6 +1,7 @@
 package com.pmcl.proyectofinal_movil
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var mediaPlayer: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,8 +19,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // Inicia la Actividades
-        val intent = Intent(this, Actividades::class.java)
+        //Instrucciones de inicio
+        mediaPlayer = MediaPlayer.create(this, R.raw.info)
+        // Inicia la Actividad
+        val intent = Intent(this, InicioActivity::class.java)
+        mediaPlayer.start()
         startActivity(intent)
 
         // Termina MainActivity para que no se vuelva a mostrar

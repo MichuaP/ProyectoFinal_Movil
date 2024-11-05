@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
-class Actividades : AppCompatActivity() {
+class Lecciones : AppCompatActivity() {
 
     // Declara el MediaPlayer como una variable de clase
     private lateinit var mediaPlayer: MediaPlayer
@@ -14,10 +14,11 @@ class Actividades : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.actividades)
+        setContentView(R.layout.lecciones)
 
         val btnAlfabeto = findViewById<ImageButton>(R.id.btnAlfabeto)
         val btnNumeros = findViewById<ImageButton>(R.id.btnNumeros)
+        val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
         mediaPlayer = MediaPlayer.create(this, R.raw.instruccabc)
@@ -38,6 +39,9 @@ class Actividades : AppCompatActivity() {
             // Inicia la actividad AlfabetoActivity
             val intent = Intent(this, NumerosLActivity::class.java)
             startActivity(intent)
+        }
+        btnBack.setOnClickListener{
+            finish()
         }
     }
 
