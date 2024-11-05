@@ -27,7 +27,7 @@ class Alfabeto @JvmOverloads constructor(
     }
     private val pTexto = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.WHITE
-        textSize = 80f
+        textSize = 100f
         textAlign = Paint.Align.CENTER
         typeface = Typeface.DEFAULT_BOLD
     }

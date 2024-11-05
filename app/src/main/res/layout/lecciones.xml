@@ -55,73 +55,149 @@
         android:background="@android:color/darker_gray"
         android:layout_marginBottom="8dp" />
 
-    <LinearLayout
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp">
+        android:gravity="center">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/btnAlfabeto"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:background="@drawable/back_button"
-                android:contentDescription="Conoce el alfabeto"/>
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:src="@drawable/abc"
-                android:layout_gravity="center"
-                android:alpha="0.5" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conoce el\nalfabeto"
-                android:textSize="25dp"
-                android:textColor="@android:color/black"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textStyle="bold" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp">
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="16dp">
 
-            <ImageButton
-                android:id="@+id/btnNumeros"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:background="@drawable/back_button"
-                android:contentDescription="Conoce los números" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:src="@drawable/nums"
-                android:layout_gravity="center"
-                android:alpha="0.5" />
+                <ImageButton
+                    android:id="@+id/btnAlfabeto"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/back_button"
+                    android:contentDescription="Conoce el alfabeto"/>
 
-            <TextView
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/abc"
+                    android:layout_gravity="center"
+                    android:alpha="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conoce el\nalfabeto"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conoce los\nnúmeros"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:layout_gravity="center"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-        </FrameLayout>
+                android:layout_marginStart="16dp">
 
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/btnNumeros"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/back_button"
+                    android:contentDescription="Conoce los números" />
 
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/nums"
+                    android:layout_gravity="center"
+                    android:alpha="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conoce los\nnúmeros"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btnVocales"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/back_button"
+                    android:contentDescription="Conoce las vocales"/>
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/abc"
+                    android:layout_gravity="center"
+                    android:alpha="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conoce las\nvocales"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnX"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/back_button"
+                    android:contentDescription="Conoce X" />
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/nums"
+                    android:layout_gravity="center"
+                    android:alpha="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conoce los\nX"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+    </TableRow>
 </TableLayout>

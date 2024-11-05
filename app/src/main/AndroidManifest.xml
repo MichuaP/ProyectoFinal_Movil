@@ -26,6 +26,7 @@
         <activity android:name=".AlfabetoActivity"></activity>
         <activity android:name=".NumerosLActivity"></activity>
         <activity android:name=".InicioActivity"></activity>
+        <activity android:name=".VocalesActivity"></activity>
     </application>
 
 </manifest>
