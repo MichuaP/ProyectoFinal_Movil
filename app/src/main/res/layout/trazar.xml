@@ -31,7 +31,7 @@
             android:layout_marginStart="-55dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="9dp"
-            android:src="@drawable/vocales" />
+            android:src="@drawable/trazar" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Conoce las vocales"
+            android:text="Traza las letras"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textSize="20dp"
@@ -58,61 +58,58 @@
         android:background="@android:color/darker_gray"
         android:layout_marginBottom="8dp" />
 
-    <TableLayout
-        android:id="@+id/button_container"
+    <!-- Barra de botones para seleccionar formas -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
+        <ImageButton
+            android:id="@+id/btnDibujoLibre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_draw_24"
+            android:backgroundTint="@color/backButton"/>
 
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonA"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Aa"/>
+        <ImageButton
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_delete_24"
+            android:backgroundTint="@color/backButton"/>
 
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonE"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Ee" />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
+    </LinearLayout>
 
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonI"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Ii" />
+    <!-- El lienzo donde se dibujan las formas -->
+    <com.pmcl.proyectofinal_movil.Trazar
+        android:id="@+id/lienzo"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@color/white"
+        android:layout_margin="20dp" />
 
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonO"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Oo" />
-        </TableRow>
+    <!-- Barra de botones para seleccionar adelante / atras -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
+        <ImageButton
+            android:id="@+id/btnAnterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_navigate_back_24"
+            android:backgroundTint="@color/backButton"/>
 
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonU"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Uu" />
-        </TableRow>
-    </TableLayout>
+        <ImageButton
+            android:id="@+id/btnSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_navigate_next_24"
+            android:backgroundTint="@color/backButton"/>
 
+    </LinearLayout>
 
 </LinearLayout>

@@ -31,7 +31,7 @@
             android:layout_marginStart="-55dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="9dp"
-            android:src="@drawable/vocales" />
+            android:src="@drawable/ordenarvocales" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Conoce las vocales"
+            android:text="Ordena las vocales"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textSize="20dp"
@@ -57,62 +57,6 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         android:layout_marginBottom="8dp" />
-
-    <TableLayout
-        android:id="@+id/button_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
-
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonA"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Aa"/>
-
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonE"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Ee" />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
-
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonI"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Ii" />
-
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonO"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Oo" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:gravity="center">
-
-            <com.pmcl.proyectofinal_movil.Alfabeto
-                android:id="@+id/buttonU"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp"
-                android:text="Uu" />
-        </TableRow>
-    </TableLayout>
 
 
 </LinearLayout>

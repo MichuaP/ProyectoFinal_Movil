@@ -12,6 +12,7 @@ class Lecciones : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var mediaPlayer2: MediaPlayer
     private lateinit var mediaPlayer3: MediaPlayer
+    private lateinit var mediaPlayer4: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,12 +21,14 @@ class Lecciones : AppCompatActivity() {
         val btnAlfabeto = findViewById<ImageButton>(R.id.btnAlfabeto)
         val btnNumeros = findViewById<ImageButton>(R.id.btnNumeros)
         val btnVocales = findViewById<ImageButton>(R.id.btnVocales)
+        val btnTrazar = findViewById<ImageButton>(R.id.btnTrazar)
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
         mediaPlayer = MediaPlayer.create(this, R.raw.instruccabc)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.instruccnum)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.instruccvocales)
+        mediaPlayer4 = MediaPlayer.create(this, R.raw.instrucctrazar)
 
         btnAlfabeto.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -51,6 +54,15 @@ class Lecciones : AppCompatActivity() {
             val intent = Intent(this, VocalesActivity::class.java)
             startActivity(intent)
         }
+        btnTrazar.setOnClickListener {
+            // Reproduce el audio al presionar el botón
+            mediaPlayer4.start()
+
+            // Inicia la actividad VocalesActivity
+            val intent = Intent(this, TrazarActivity::class.java)
+            startActivity(intent)
+        }
+
         btnBack.setOnClickListener{
             finish()
         }

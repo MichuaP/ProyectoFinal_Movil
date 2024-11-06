@@ -35,8 +35,8 @@ class InicioActivity : AppCompatActivity() {
         }
         btnActividades.setOnClickListener {
             // Inicia la actividad Actividades
-//            val intent = Intent(this, NumerosLActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, Actividades::class.java)
+            startActivity(intent)
         }
     }
 

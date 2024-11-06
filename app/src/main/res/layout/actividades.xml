@@ -35,13 +35,13 @@
                 android:layout_marginStart="-25dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/lecciones" />
+                android:src="@drawable/actividadesii" />
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lecciones"
+            android:text="Actividades"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textSize="20dp"
@@ -72,23 +72,23 @@
                 android:layout_height="wrap_content">
 
                 <ImageButton
-                    android:id="@+id/btnAlfabeto"
+                    android:id="@+id/btnOrdenarVocales"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:background="@drawable/back_button"
-                    android:contentDescription="Conoce el alfabeto"/>
+                    android:contentDescription="Ordena las Vocales"/>
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:src="@drawable/abc"
+                    android:src="@drawable/ordenarvocales"
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Conoce el\nalfabeto"
+                    android:text="Ordena las\nvocales"
                     android:textSize="25dp"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
@@ -175,23 +175,23 @@
                 android:layout_marginStart="16dp">
 
                 <ImageButton
-                    android:id="@+id/btnTrazar"
+                    android:id="@+id/btnX"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:background="@drawable/back_button"
-                    android:contentDescription="Traza las letras" />
+                    android:contentDescription="Conoce X" />
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:src="@drawable/trazar"
+                    android:src="@drawable/nums"
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Traza las\nLetras"
+                    android:text="Conoce los\nX"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
