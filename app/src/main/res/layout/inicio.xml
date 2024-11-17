@@ -102,7 +102,7 @@
                 android:id="@+id/btnLecciones"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:background="@drawable/back_button"
+                android:background="@drawable/rounded_corner"
                 android:contentDescription="Lecciones"/>
 
             <ImageView
@@ -132,7 +132,7 @@
                 android:id="@+id/btnActividades"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:background="@drawable/back_button"
+                android:background="@drawable/rounded_corner"
                 android:contentDescription="Actividades" />
 
             <ImageView

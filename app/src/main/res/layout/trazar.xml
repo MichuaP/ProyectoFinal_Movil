@@ -86,7 +86,7 @@
         android:id="@+id/lienzo"
         android:layout_width="match_parent"
         android:layout_height="450dp"
-        android:background="@color/white"
+        android:background="@drawable/rounded_corner"
         android:layout_margin="20dp" />
 
     <!-- Barra de botones para seleccionar adelante / atras -->

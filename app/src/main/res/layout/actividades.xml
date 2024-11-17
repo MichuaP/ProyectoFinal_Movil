@@ -75,13 +75,14 @@
                     android:id="@+id/btnOrdenarVocales"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:background="@drawable/back_button"
+                    android:background="@drawable/rounded_corner"
                     android:contentDescription="Ordena las Vocales"/>
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ordenarvocales"
+
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
@@ -105,7 +106,7 @@
                     android:id="@+id/btnNumeros"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:background="@drawable/back_button"
+                    android:background="@drawable/rounded_corner"
                     android:contentDescription="Conoce los números" />
 
                 <ImageView
@@ -148,7 +149,7 @@
                     android:id="@+id/btnVocales"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:background="@drawable/back_button"
+                    android:background="@drawable/rounded_corner"
                     android:contentDescription="Conoce las vocales"/>
 
                 <ImageView
@@ -178,7 +179,7 @@
                     android:id="@+id/btnX"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:background="@drawable/back_button"
+                    android:background="@drawable/rounded_corner"
                     android:contentDescription="Conoce X" />
 
                 <ImageView
