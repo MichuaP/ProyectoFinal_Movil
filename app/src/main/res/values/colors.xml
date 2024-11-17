@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrint">#000000</color>
     <color name="backButton">#FFFFFFFF</color>
+    <color name="background">#dbbbfe</color>
 </resources>
