@@ -48,6 +48,8 @@
         <activity android:name=".TrazarActivity"></activity>
 
         <activity android:name=".AgitaLetrasActivity"></activity>
+        <activity android:name=".RelacionarNumActivity"></activity>
+        <activity android:name=".MemoriaActivity"></activity>
 
     </application>
 
