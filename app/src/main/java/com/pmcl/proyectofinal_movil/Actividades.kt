@@ -11,6 +11,7 @@ class Actividades : AppCompatActivity() {
     // Declara el MediaPlayer como una variable de clase
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var mediaPlayer2: MediaPlayer
+    private lateinit var mediaPlayer3: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +24,8 @@ class Actividades : AppCompatActivity() {
 
         // Inicializa el MediaPlayer con el archivo de audio
         mediaPlayer = MediaPlayer.create(this, R.raw.instruccordenarv)
-        mediaPlayer2 = MediaPlayer.create(this, R.raw.instruccordenarv)
+        mediaPlayer2 = MediaPlayer.create(this, R.raw.columnas)
+        mediaPlayer3 = MediaPlayer.create(this, R.raw.memorama)
 
         btnOrdenarVocales.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -35,7 +37,7 @@ class Actividades : AppCompatActivity() {
         }
         btnrelacionarN.setOnClickListener {
             // Reproduce el audio al presionar el botón
-            //mediaPlayer2.start()
+            mediaPlayer2.start()
 
             // Inicia la actividad AlfabetoActivity
             val intent = Intent(this, RelacionarNumActivity::class.java)
@@ -43,7 +45,7 @@ class Actividades : AppCompatActivity() {
         }
         btnmemorama.setOnClickListener {
             // Reproduce el audio al presionar el botón
-            //mediaPlayer2.start()
+            mediaPlayer3.start()
 
             // Inicia la actividad memorama
             val intent = Intent(this, MemoriaActivity::class.java)
