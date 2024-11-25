@@ -4,93 +4,74 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.RectF
 import android.graphics.Typeface
 import android.media.MediaPlayer
 import android.util.AttributeSet
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import kotlin.math.roundToInt
 
-class NumRelacionar : AppCompatButton{
-    var pFondo: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var pFondoPress: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var pTexto: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+class NumRelacionar @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : AppCompatButton(context, attrs) {
 
+    private val escala = resources.displayMetrics.density
+    private var currentColor = getRandomPastelColor()
+    private val pFondo = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = currentColor
+        style = Paint.Style.FILL
+    }
+    private val pTexto = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.WHITE
+        textSize = 30f * escala
+        textAlign = Paint.Align.CENTER
+        typeface = Typeface.DEFAULT_BOLD
+    }
+    private val cornerRadius = 15f * escala
     private var mediaPlayer: MediaPlayer? = null
-    private var sonidoId: Int = 0
 
-    val colores = arrayOf(
-        Color.parseColor("#70ff99"), //verde
-        Color.parseColor("#ff7070"), //rojo
-        Color.parseColor("#fd9432"), //naranja
-        Color.parseColor("#FDED32"), //amarillo
-        Color.parseColor("#70d6ff"), //azul
-        Color.parseColor("#ff70ff"), //rosa
-        Color.parseColor("#ff70d2"), //fiusha
-    )
-
-    constructor(context: Context) : super(context) {
-        inicializa()
-        configurarListener()
+    companion object {
+        private val pastelColors = intArrayOf(
+            Color.parseColor("#ff7070"), //rojo
+            Color.parseColor("#fd9432"), //naranja
+            Color.parseColor("#70d6ff"), //azul
+            Color.parseColor("#ff70ff"), //rosa
+            Color.parseColor("#ff70d2"), //fiusha
+        )
     }
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        inicializa()
-        configurarListener()
+    private fun getRandomPastelColor(): Int {
+        return pastelColors.random()
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
-            super(context!!, attrs, defStyleAttr) {
-        inicializa()
-        configurarListener()
+    private fun darkenColor(color: Int): Int {
+        val factor = 0.8f
+        val r = (Color.red(color) * factor).roundToInt()
+        val g = (Color.green(color) * factor).roundToInt()
+        val b = (Color.blue(color) * factor).roundToInt()
+        return Color.rgb(r, g, b)
     }
 
-    private fun inicializa() {
-        pFondo.style = Paint.Style.FILL
-        pFondoPress.color = Color.YELLOW
-        pFondoPress.style = Paint.Style.FILL
-        pTexto.color = Color.WHITE
-        pTexto.textSize = 100f
-//        mediaPlayer = MediaPlayer.create(context, R.raw.uno)
-        pFondo.color = colores.random() //color aleatorio del array
-        pTexto.typeface = Typeface.DEFAULT_BOLD
-    }
-
-    private fun configurarListener() {
-        setOnClickListener {
-            //se libera el media player
-            mediaPlayer?.release()
-            //Se inicializa mediaplayer con el audio establecido en main
-            mediaPlayer = MediaPlayer.create(context, sonidoId)
-            //Reproducir el sonido
-            mediaPlayer?.start()
-        }
+    fun changeColor(newColor: Int) {
+        currentColor = newColor
+        pFondo.color = newColor
+        invalidate()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val centerX = width / 2f
-        val centerY = height / 2f
-        val rectSize = minOf(width, height) * 1f
-        val halfRectSize = rectSize / 2f
-        val left = centerX - halfRectSize
-        val top = centerY - halfRectSize
-        val right = centerX + halfRectSize
-        val bottom = centerY + halfRectSize
+        val rect = RectF(0f, 0f, width.toFloat(), height.toFloat())
+        canvas.drawRoundRect(rect, cornerRadius, cornerRadius, pFondo)
 
-        canvas.drawRect(left, top, right, bottom, pFondo)
-        val xPos = centerX - (pTexto.measureText(text.toString()) / 2)
-        val yPos = centerY - ((pTexto.descent() + pTexto.ascent()) / 2)
-        canvas.drawText(text.toString(), xPos, yPos, pTexto)
+        val textX = width / 2f
+        val textY = height / 2f - (pTexto.descent() + pTexto.ascent()) / 2
+        canvas.drawText(text.toString(), textX, textY, pTexto)
     }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         mediaPlayer?.release()
         mediaPlayer = null
-    }
-
-    fun setSonido(resId: Int) {
-        sonidoId = resId
     }
 
 }

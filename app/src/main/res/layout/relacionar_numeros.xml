@@ -64,13 +64,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <com.pmcl.proyectofinal_movil.CanvasRelacionar
-            android:id="@+id/canvasView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            />
-
         <LinearLayout
             android:id="@+id/colIzq"
             android:layout_width="wrap_content"
@@ -85,8 +78,6 @@
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/segundo"
@@ -95,8 +86,6 @@
                 android:layout_height="100dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/tercero"
@@ -105,8 +94,6 @@
                 android:layout_height="100dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/cuarto"
@@ -114,8 +101,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
-                android:background="@android:color/transparent"
-
                 />
 
         </LinearLayout>
@@ -133,8 +118,6 @@
                 android:layout_width="100dp"
                 android:layout_marginBottom="20dp"
                 android:layout_height="100dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/sexto"
@@ -142,8 +125,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginBottom="20dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/septimo"
@@ -151,18 +132,13 @@
                 android:layout_marginBottom="20dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@android:color/transparent"
-
                 />
             <com.pmcl.proyectofinal_movil.NumRelacionar
                 android:id="@+id/octavo"
                 android:text=""
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@android:color/transparent"
-
                 />
-
         </LinearLayout>
     </RelativeLayout>
 

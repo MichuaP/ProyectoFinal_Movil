@@ -11,14 +11,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MemoriaActivity : AppCompatActivity() {
-    private var mediaPlayer: MediaPlayer? = null
+    private lateinit var mediaCorrecta: MediaPlayer
+    private lateinit var mediaFinal: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.memoria_layout)
         val btnSalir = findViewById<ImageButton>(R.id.btnSalir)
         // MediaPlayer para reproducir los sonidos
-        //mediaPlayer = MediaPlayer.create(this, R.raw.memorama)
+        mediaCorrecta = MediaPlayer.create(this, R.raw.correct)
+        mediaFinal = MediaPlayer.create(this, R.raw.finish)
 
         val images: MutableList<Pair<Int, String>> = mutableListOf(
             Pair(R.drawable.focam, "foca"),
@@ -72,8 +74,6 @@ class MemoriaActivity : AppCompatActivity() {
         val totalPairs = images.size / 2
         var pairsFound = 0
 
-
-
         for (i in buttons.indices) {
             buttons[i].setBackgroundResource(cardBack)
             buttons[i].tag = images[i].second
@@ -93,12 +93,14 @@ class MemoriaActivity : AppCompatActivity() {
                         // Comprobar si coinciden
                         if (buttons[i].tag == buttons[lastClicked].tag) {
                             //Si coinciden, desactivar ambos botones
+                            mediaCorrecta.start()
                             buttons[i].isClickable = false
                             buttons[lastClicked].isClickable = false
                             pairsFound++
 
                             //Revisar si ya se encontraron todos los pares
                             if (pairsFound == totalPairs) {
+                                mediaFinal.start()
                                 //final juego
                                 val builder = Builder(this)
                                 builder
