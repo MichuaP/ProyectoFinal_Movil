@@ -31,7 +31,7 @@
             android:layout_marginStart="-55dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="9dp"
-            android:src="@drawable/ordenarvocales" />
+            android:src="@drawable/num" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ordena las vocales"
+            android:text="Traza los números"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textSize="20dp"
@@ -58,9 +58,58 @@
         android:background="@android:color/darker_gray"
         android:layout_marginBottom="8dp" />
 
-        <com.pmcl.proyectofinal_movil.OrdenarVocales
-            android:id="@+id/controlSelectorView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+    <!-- Barra de botones para seleccionar formas -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnDibujoLibre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_draw_24"
+            android:backgroundTint="@color/backButton"/>
+
+        <ImageButton
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_delete_24"
+            android:backgroundTint="@color/backButton"/>
+
+    </LinearLayout>
+
+    <!-- El lienzo donde se dibujan las formas -->
+    <com.pmcl.proyectofinal_movil.Trazar
+        android:id="@+id/lienzo"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="20dp" />
+
+    <!-- Barra de botones para seleccionar adelante / atras -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnAnterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_navigate_back_24"
+            android:backgroundTint="@color/backButton"/>
+
+        <ImageButton
+            android:id="@+id/btnSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_navigate_next_24"
+            android:backgroundTint="@color/backButton"/>
+
+    </LinearLayout>
 
 </LinearLayout>

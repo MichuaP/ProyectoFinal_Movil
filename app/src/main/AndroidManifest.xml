@@ -27,12 +27,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity android:name=".InicioActivity"></activity>
 
         <activity android:name=".Lecciones"></activity>
@@ -50,6 +46,8 @@
         <activity android:name=".AgitaLetrasActivity"></activity>
         <activity android:name=".RelacionarNumActivity"></activity>
         <activity android:name=".MemoriaActivity"></activity>
+
+        <activity android:name=".TrazarNumActivity"></activity>
 
     </application>
 

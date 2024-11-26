@@ -14,6 +14,7 @@ class Lecciones : AppCompatActivity() {
     private lateinit var mediaPlayer3: MediaPlayer
     private lateinit var mediaPlayer4: MediaPlayer
     private lateinit var mediaPlayer5: MediaPlayer
+    private lateinit var mediaPlayer6: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class Lecciones : AppCompatActivity() {
         val btnVocales = findViewById<ImageButton>(R.id.btnVocales)
         val btnTrazar = findViewById<ImageButton>(R.id.btnTrazar)
         val btnAgitar = findViewById<ImageButton>(R.id.btnAgita)
+        val btnTrazarNum = findViewById<ImageButton>(R.id.btnTrazarNum)
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
@@ -32,6 +34,7 @@ class Lecciones : AppCompatActivity() {
         mediaPlayer3 = MediaPlayer.create(this, R.raw.instruccvocales)
         mediaPlayer4 = MediaPlayer.create(this, R.raw.instrucctrazar)
         mediaPlayer5 = MediaPlayer.create(this, R.raw.instruccagita)
+        mediaPlayer6 = MediaPlayer.create(this, R.raw.instrucctraznum)
 
         btnAlfabeto.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -75,6 +78,12 @@ class Lecciones : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnTrazarNum.setOnClickListener {
+            mediaPlayer6.start()
+            val intent = Intent(this, TrazarNumActivity::class.java)
+            startActivity(intent)
+        }
+
         btnBack.setOnClickListener{
             finish()
         }
@@ -91,6 +100,15 @@ class Lecciones : AppCompatActivity() {
         }
         if (::mediaPlayer3.isInitialized) {
             mediaPlayer3.release()
+        }
+        if (::mediaPlayer4.isInitialized) {
+            mediaPlayer4.release()
+        }
+        if (::mediaPlayer5.isInitialized) {
+            mediaPlayer5.release()
+        }
+        if (::mediaPlayer6.isInitialized) {
+            mediaPlayer6.release()
         }
     }
 }
