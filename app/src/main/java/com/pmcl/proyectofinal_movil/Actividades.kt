@@ -12,6 +12,7 @@ class Actividades : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var mediaPlayer2: MediaPlayer
     private lateinit var mediaPlayer3: MediaPlayer
+    private lateinit var mediaPlayer4: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,12 +21,14 @@ class Actividades : AppCompatActivity() {
         val btnOrdenarVocales = findViewById<ImageButton>(R.id.btnOrdenarVocales)
         val btnrelacionarN = findViewById<ImageButton>(R.id.btnRelacionarN)
         val btnmemorama = findViewById<ImageButton>(R.id.btnMemorama)
+        val btnCompletarPalabra = findViewById<ImageButton>(R.id.btnCompletaPalabra)
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
         mediaPlayer = MediaPlayer.create(this, R.raw.instruccordenarv)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.columnas)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.memorama)
+        mediaPlayer4 = MediaPlayer.create(this, R.raw.instrucccomp)
 
         btnOrdenarVocales.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -51,6 +54,14 @@ class Actividades : AppCompatActivity() {
             val intent = Intent(this, MemoriaActivity::class.java)
             startActivity(intent)
         }
+        btnCompletarPalabra.setOnClickListener {
+            // Reproduce el audio al presionar el botón
+            mediaPlayer4.start()
+
+            // Inicia la actividad memorama
+            val intent = Intent(this, CompletarActivity::class.java)
+            startActivity(intent)
+        }
 
         btnBack.setOnClickListener{
             finish()
@@ -64,6 +75,10 @@ class Actividades : AppCompatActivity() {
             mediaPlayer.release()
         } else if (::mediaPlayer2.isInitialized) {
             mediaPlayer2.release()
+        }else if (::mediaPlayer3.isInitialized) {
+            mediaPlayer3.release()
+        }else if (::mediaPlayer4.isInitialized) {
+            mediaPlayer4.release()
         }
     }
 }

@@ -48,7 +48,7 @@
         <activity android:name=".MemoriaActivity"></activity>
 
         <activity android:name=".TrazarNumActivity"></activity>
-
+        <activity android:name=".CompletarActivity"></activity>
     </application>
 
 </manifest>

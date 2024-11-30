@@ -176,23 +176,23 @@
                 android:layout_marginStart="16dp">
 
                 <ImageButton
-                    android:id="@+id/btnX"
+                    android:id="@+id/btnCompletaPalabra"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
-                    android:contentDescription="Conoce X" />
+                    android:contentDescription="Completa la palabra" />
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:src="@drawable/nums"
+                    android:src="@drawable/gramatica"
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Conoce los\nX"
+                    android:text="Completa la\nPalabra"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
