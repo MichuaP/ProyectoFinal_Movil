@@ -49,6 +49,8 @@
 
         <activity android:name=".TrazarNumActivity"></activity>
         <activity android:name=".CompletarActivity"></activity>
+
+        <activity android:name=".ContarObjetosActivity"></activity>
     </application>
 
 </manifest>

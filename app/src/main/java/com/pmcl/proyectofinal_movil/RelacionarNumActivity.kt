@@ -39,7 +39,7 @@ class RelacionarNumActivity : AppCompatActivity() {
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         mediaCorrecta = MediaPlayer.create(this, R.raw.correct)
-        mediaIncorrecta = MediaPlayer.create(this, R.raw.wrong2)
+        mediaIncorrecta = MediaPlayer.create(this, R.raw.error)
         mediaFinal = MediaPlayer.create(this, R.raw.finish)
 
         var pairsFound = 0

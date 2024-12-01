@@ -13,6 +13,7 @@ class Actividades : AppCompatActivity() {
     private lateinit var mediaPlayer2: MediaPlayer
     private lateinit var mediaPlayer3: MediaPlayer
     private lateinit var mediaPlayer4: MediaPlayer
+    private lateinit var mediaPlayer5: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class Actividades : AppCompatActivity() {
         val btnrelacionarN = findViewById<ImageButton>(R.id.btnRelacionarN)
         val btnmemorama = findViewById<ImageButton>(R.id.btnMemorama)
         val btnCompletarPalabra = findViewById<ImageButton>(R.id.btnCompletaPalabra)
+        val btnContar = findViewById<ImageButton>(R.id.btnContar)
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
@@ -29,6 +31,7 @@ class Actividades : AppCompatActivity() {
         mediaPlayer2 = MediaPlayer.create(this, R.raw.columnas)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.memorama)
         mediaPlayer4 = MediaPlayer.create(this, R.raw.instrucccomp)
+        mediaPlayer5 = MediaPlayer.create(this, R.raw.instrucccontar)
 
         btnOrdenarVocales.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -62,6 +65,14 @@ class Actividades : AppCompatActivity() {
             val intent = Intent(this, CompletarActivity::class.java)
             startActivity(intent)
         }
+        btnContar.setOnClickListener {
+            // Reproduce el audio al presionar el botón
+            mediaPlayer5.start()
+
+            // Inicia la actividad memorama
+            val intent = Intent(this, ContarObjetosActivity::class.java)
+            startActivity(intent)
+        }
 
         btnBack.setOnClickListener{
             finish()
@@ -79,6 +90,8 @@ class Actividades : AppCompatActivity() {
             mediaPlayer3.release()
         }else if (::mediaPlayer4.isInitialized) {
             mediaPlayer4.release()
+        }else if (::mediaPlayer5.isInitialized) {
+            mediaPlayer5.release()
         }
     }
 }
