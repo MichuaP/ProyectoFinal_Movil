@@ -4,6 +4,8 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class Actividades : AppCompatActivity() {
@@ -14,10 +16,25 @@ class Actividades : AppCompatActivity() {
     private lateinit var mediaPlayer3: MediaPlayer
     private lateinit var mediaPlayer4: MediaPlayer
     private lateinit var mediaPlayer5: MediaPlayer
+    //Variables de la base de datos
+    private lateinit var db: DBSQLite
+    //Mapear actividades
+    val actividadImageViewMap = mapOf(
+        "Ordenar vocales" to R.id.progreso1,
+        "Relacionar números" to R.id.progreso2,
+        "Memorama" to R.id.progreso3,
+        "Completar palabra" to R.id.progreso4,
+        "Contar objetos" to R.id.progreso5,
+        "Formar palabras" to R.id.progreso6
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.actividades)
+
+        // Inicializar la base de datos y la vista
+        db = DBSQLite(this)
+        mostrarProgresos()
 
         val btnOrdenarVocales = findViewById<ImageButton>(R.id.btnOrdenarVocales)
         val btnrelacionarN = findViewById<ImageButton>(R.id.btnRelacionarN)
@@ -102,4 +119,27 @@ class Actividades : AppCompatActivity() {
             mediaPlayer5.release()
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        mostrarProgresos()
+    }
+
+    fun mostrarProgresos(){
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(this)
+
+        //Progresos del usuario activo
+        val progresos = db.showProgress(usuarioActual)
+
+        // Actualizar en el layout
+        progresos.forEach { (actividad, estado) ->
+            val imageViewId = actividadImageViewMap[actividad]
+            if (imageViewId != null && estado == "S") {
+                val imageView = findViewById<ImageView>(imageViewId)
+                imageView.setImageResource(R.drawable.completado)
+            }
+        }
+    }
+
 }

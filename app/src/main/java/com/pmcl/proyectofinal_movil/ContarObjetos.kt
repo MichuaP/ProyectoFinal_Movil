@@ -27,6 +27,9 @@ class ContarObjetos(context: Context, attrs: AttributeSet) : View(context, attrs
         typeface = Typeface.DEFAULT_BOLD
     }
 
+    private var nombreActividad = "Contar objetos"
+    private lateinit var db: DBSQLite
+
     // Lista de imágenes disponibles
     private val imagenesDisponibles = mutableListOf(
         R.drawable.taco, R.drawable.aguacate, R.drawable.estrella,
@@ -315,6 +318,9 @@ class ContarObjetos(context: Context, attrs: AttributeSet) : View(context, attrs
         val mediaPlayerFinish = MediaPlayer.create(context, R.raw.finish)
         mediaPlayerFinish.start()
 
+        //Guardar progreso
+        guardarProgreso()
+
         // Mostrar un diálogo de finalización con la opción de reiniciar o salir
         AlertDialog.Builder(context)
             .setTitle("¡Felicidades!")
@@ -324,6 +330,17 @@ class ContarObjetos(context: Context, attrs: AttributeSet) : View(context, attrs
                 activity?.finish()  // Salir de la actividad actual
             }
             .show()
+    }
+
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(context)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(context)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(context, "Progreso guardado", Toast.LENGTH_SHORT).show()
     }
 
 }

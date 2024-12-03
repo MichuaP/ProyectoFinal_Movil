@@ -47,6 +47,7 @@ class Login : AppCompatActivity() {
 
             //empezar sonido
             //mediaPlayer.start()
+            finish()
 
         }
         btnSalir.setOnClickListener{
@@ -77,6 +78,8 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, InicioActivity::class.java)
             startActivity(intent)
             mediaPlayer.start()
+
+            finish()
 
         } else {
             // Credenciales incorrectas

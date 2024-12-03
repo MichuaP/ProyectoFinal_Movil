@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 class MemoriaActivity : AppCompatActivity() {
     private lateinit var mediaCorrecta: MediaPlayer
     private lateinit var mediaFinal: MediaPlayer
+    private var nombreActividad = "Memorama"
+    private lateinit var db: DBSQLite
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +103,8 @@ class MemoriaActivity : AppCompatActivity() {
                             //Revisar si ya se encontraron todos los pares
                             if (pairsFound == totalPairs) {
                                 mediaFinal.start()
+                                //Guardar progreso
+                                guardarProgreso()
                                 //final juego
                                 val builder = Builder(this)
                                 builder
@@ -156,5 +160,15 @@ class MemoriaActivity : AppCompatActivity() {
         }
     }
 
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(this)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(this)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(this, "Progreso guardado", Toast.LENGTH_SHORT).show()
+    }
 
 }

@@ -21,6 +21,8 @@ class Completar(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var letraFaltante: Char = ' '
     private var letrasPosibles = mutableListOf<Char>()
     private val palabrasUsadas = mutableSetOf<String>()
+    private var nombreActividad = "Completar palabra"
+    private lateinit var db: DBSQLite
 
     // Referencia a la imagen de la actividad
     private lateinit var imageViewObjeto: ImageView
@@ -404,6 +406,9 @@ class Completar(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private fun onCompleteGame() {
         mediaPlayerFinish?.start()  // Sonido de finalización
 
+        //Guardar progreso
+        guardarProgreso()
+
         // Mostrar un diálogo con la opción de reiniciar o salir
         AlertDialog.Builder(context)
             .setTitle("¡Felicidades!")
@@ -413,5 +418,16 @@ class Completar(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 activity?.finish()  // Salir de la actividad actual
             }
             .show()
+    }
+
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(context)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(context)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(context, "Progreso guardado", Toast.LENGTH_SHORT).show()
     }
 }

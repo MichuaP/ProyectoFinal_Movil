@@ -79,10 +79,18 @@
                     android:contentDescription="Ordena las Vocales"/>
 
                 <ImageView
+                    android:id="@+id/progreso1"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
+
+                <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
                     android:src="@drawable/ordenarvocales"
-
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
@@ -108,6 +116,14 @@
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
                     android:contentDescription="Conoce los números" />
+                <ImageView
+                    android:id="@+id/progreso2"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
 
                 <ImageView
                     android:layout_width="140dp"
@@ -151,6 +167,14 @@
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
                     android:contentDescription="Memorama"/>
+                <ImageView
+                    android:id="@+id/progreso3"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
 
                 <ImageView
                     android:layout_width="140dp"
@@ -181,6 +205,14 @@
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
                     android:contentDescription="Completa la palabra" />
+                <ImageView
+                    android:id="@+id/progreso4"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
 
                 <ImageView
                     android:layout_width="140dp"
@@ -224,6 +256,14 @@
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
                     android:contentDescription="Cuenta los objetos"/>
+                <ImageView
+                    android:id="@+id/progreso5"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
 
                 <ImageView
                     android:layout_width="140dp"
@@ -254,6 +294,14 @@
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
                     android:contentDescription="Forma las palabras" />
+                <ImageView
+                    android:id="@+id/progreso6"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd" />
 
                 <ImageView
                     android:layout_width="140dp"

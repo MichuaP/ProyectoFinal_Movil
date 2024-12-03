@@ -53,6 +53,15 @@ class DBSQLite (context: Context?): SQLiteOpenHelper(context, DATABASE_NAME, nul
             arrayOf("admin", "admin123", 21)
         )
 
+        //Insertar actividades disponibles
+        val actividades = listOf("Ordenar vocales", "Relacionar números",
+            "Memorama", "Completar palabra","Contar objetos","Formar palabras")
+        for (actividad in actividades) {
+            db.execSQL(
+                "INSERT OR IGNORE INTO $TAB_ACTIVIDAD (nombre) VALUES (?)",
+                arrayOf(actividad)
+            )
+        }
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int ) {
@@ -91,19 +100,26 @@ class DBSQLite (context: Context?): SQLiteOpenHelper(context, DATABASE_NAME, nul
     }
 
     // Función para mostrar progreso
-    fun showProgress(alias: String): List<String> {
-        val result = mutableListOf<String>()
+    fun showProgress(alias: String): Map<String, String> {
+        val progressMap = mutableMapOf<String, String>()
+        if (alias.isNullOrEmpty()) return progressMap
+
         val db = readableDatabase
-        val query = "SELECT nombreAct, progreso, terminada FROM $TAB_PROGRESO WHERE aliasUs = ?"
+        val query = "SELECT nombreAct, terminada FROM $TAB_PROGRESO WHERE aliasUs = ?"
         val cursor = db.rawQuery(query, arrayOf(alias))
-        while (cursor.moveToNext()) {
-            val actividad = cursor.getString(0)
-            val progreso = cursor.getInt(1)
-            val terminada = cursor.getString(2)
-            result.add("$actividad: $progreso% - Terminada: $terminada")
+
+        if (cursor.moveToFirst()) {
+            do {
+                val actividad = cursor.getString(cursor.getColumnIndexOrThrow("nombreAct"))
+                val terminada = cursor.getString(cursor.getColumnIndexOrThrow("terminada"))
+                progressMap[actividad] = terminada
+            } while (cursor.moveToNext())
         }
+
         cursor.close()
-        return result
+        db.close()
+        return progressMap
+
     }
 
     // Agregar usuario

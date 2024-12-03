@@ -6,6 +6,7 @@ import android.media.MediaPlayer
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
@@ -21,6 +22,8 @@ class OrdenarVocales(context: Context, attrs: AttributeSet) : View(context, attr
     private var originalPosition: PointF? = null
     private var lockedRects = mutableSetOf<Int>()
     private var allCorrect = false
+    private var nombreActividad = "Ordenar vocales"
+    private lateinit var db: DBSQLite
 
     private var mediaCorrecta: MediaPlayer
     private var mediaFinal: MediaPlayer
@@ -173,16 +176,30 @@ class OrdenarVocales(context: Context, attrs: AttributeSet) : View(context, attr
         // Reproducir el sonido final
         mediaFinal.start()
 
+        //Guardar progreso
+        guardarProgreso()
+
         // Mostrar el AlertDialog al completar el juego
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Felicidades")
             .setIcon(R.drawable.baseline_check_24)
             .setMessage("Haz completado el juego")
             .setPositiveButton("Salir") { dialog, id ->
-                // Finalizar la actividad o hacer lo que desees
+                // Finalizar la actividad
                 (context as? AppCompatActivity)?.finish()
             }
         builder.show()
+    }
+
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(context)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(context)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(context, "Progreso guardado", Toast.LENGTH_SHORT).show()
     }
 
     override fun validateDrop(viewRect: RectF, targetRect: RectF): Boolean {

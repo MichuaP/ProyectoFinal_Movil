@@ -28,6 +28,9 @@ class RelacionarNumActivity : AppCompatActivity() {
         }
     }.shuffled()
 
+    private var nombreActividad = "Relacionar números"
+    private lateinit var db: DBSQLite
+
     private lateinit var mediaCorrecta: MediaPlayer
     private lateinit var mediaIncorrecta: MediaPlayer
     private lateinit var mediaFinal: MediaPlayer
@@ -114,7 +117,9 @@ class RelacionarNumActivity : AppCompatActivity() {
                         //Revisar si ya se encontraron todos los pares
                         if (pairsFound == 4) {
                             mediaFinal.start()
-                            //final juego
+                            //Guardar progreso
+                            guardarProgreso()
+                            //Fin del juego
                             val builder = Builder(this)
                             builder
                                 .setTitle("Felicidades")
@@ -135,5 +140,16 @@ class RelacionarNumActivity : AppCompatActivity() {
             }
         }
         btnBack.setOnClickListener { finish() }
+    }
+
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(this)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(this)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(this, "Progreso guardado", Toast.LENGTH_SHORT).show()
     }
 }

@@ -17,6 +17,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class FormarPalabras(context: Context, attrs: AttributeSet) : View(context, attrs) {
+    private var nombreActividad = "Formar palabras"
+    private lateinit var db: DBSQLite
     // Dibujos
     private val pRectangulo = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.WHITE
@@ -284,6 +286,9 @@ class FormarPalabras(context: Context, attrs: AttributeSet) : View(context, attr
     private fun onCompleteGame() {
         mediaPlayerFinish?.start()  // Sonido de finalización
 
+        //Guardar progreso
+        guardarProgreso()
+
         // Mostrar un diálogo con la opción de reiniciar o salir
         AlertDialog.Builder(context)
             .setTitle("¡Felicidades!")
@@ -293,5 +298,16 @@ class FormarPalabras(context: Context, attrs: AttributeSet) : View(context, attr
                 activity?.finish()  // Salir de la actividad actual
             }
         .show()
+    }
+
+    private fun guardarProgreso(){
+        //inicializar base de datos
+        db = DBSQLite(context)
+        //Obtener nombre del usuario
+        var usuarioActual = SaveSharedPreference.getUserName(context)
+
+        //Guardar progreso
+        db.saveProgress(usuarioActual,nombreActividad,100,"S")
+        Toast.makeText(context, "Progreso guardado", Toast.LENGTH_SHORT).show()
     }
 }
