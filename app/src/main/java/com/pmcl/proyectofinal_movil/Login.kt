@@ -35,7 +35,6 @@ class Login : AppCompatActivity() {
 
         val btnIniciaSesion = findViewById<Button>(R.id.iniciaSesion)
         val btnCrearCuenta = findViewById<Button>(R.id.crearCuenta)
-        val btnSalir = findViewById<ImageButton>(R.id.btnVolver)
 
         btnIniciaSesion.setOnClickListener{
             iniciarSesion()
@@ -49,9 +48,6 @@ class Login : AppCompatActivity() {
             //mediaPlayer.start()
             finish()
 
-        }
-        btnSalir.setOnClickListener{
-            finish()
         }
 
     }
