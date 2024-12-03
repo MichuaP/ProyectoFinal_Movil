@@ -105,6 +105,14 @@
                 android:background="@drawable/rounded_corner"
                 android:contentDescription="Lecciones"/>
 
+            <TextView
+                android:id="@+id/progresoLecc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:gravity="end"
+                android:text="prueba"
+                android:textAlignment="textEnd" />
             <ImageView
                 android:layout_width="140dp"
                 android:layout_height="140dp"
@@ -133,7 +141,17 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:background="@drawable/rounded_corner"
-                android:contentDescription="Actividades" />
+                android:contentDescription="Actividades"
+                />
+
+            <TextView
+                android:id="@+id/progresoAct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:gravity="end"
+                android:text="prueba"
+                android:textAlignment="textEnd" />
 
             <ImageView
                 android:layout_width="140dp"

@@ -19,14 +19,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //Instrucciones de inicio
-        mediaPlayer = MediaPlayer.create(this, R.raw.info)
-        // Inicia la Actividad
-        val intent = Intent(this, InicioActivity::class.java)
-        mediaPlayer.start()
+        //Instrucciones de login
+        //mediaPlayer = MediaPlayer.create(this, R.raw.info)
+
+        //inicia Login
+        val intent = Intent(this, Login::class.java)
+        //mediaPlayer.start()
         startActivity(intent)
 
         // Termina MainActivity para que no se vuelva a mostrar
         finish()
+
     }
 }

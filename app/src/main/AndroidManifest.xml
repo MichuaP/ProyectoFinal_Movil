@@ -53,6 +53,9 @@
         <activity android:name=".ContarObjetosActivity"></activity>
 
         <activity android:name=".FormarActivity"></activity>
+
+        <activity android:name=".Login"></activity>
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>
