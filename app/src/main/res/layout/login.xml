@@ -100,7 +100,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:text="Username"/>
+                android:text="Alias"/>
             <EditText
                 android:id="@+id/nomUs"
                 android:layout_width="match_parent"
@@ -115,13 +115,14 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:text="Constraseña"/>
+                android:text="Contraseña"/>
             <EditText
                 android:id="@+id/password"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:textColor="@color/black"
+                android:inputType="textPassword"
                 />
             <Button
                 android:id="@+id/iniciaSesion"

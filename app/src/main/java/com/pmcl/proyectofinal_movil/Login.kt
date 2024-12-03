@@ -70,6 +70,9 @@ class Login : AppCompatActivity() {
             // Usuario válido, navegar a la siguiente pantalla
             Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show()
 
+            //Guardar usuario en sharedPreferences
+            SaveSharedPreference.setUserName(this, usuarioActual)
+
             mediaPlayer = MediaPlayer.create(this, R.raw.info)
             val intent = Intent(this, InicioActivity::class.java)
             startActivity(intent)

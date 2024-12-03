@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class InicioActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class InicioActivity : AppCompatActivity() {
         val btnActividades = findViewById<ImageButton>(R.id.btnActividades)
         val btnInfo = findViewById<ImageButton>(R.id.btnInfo)
         val btnSalir = findViewById<ImageButton>(R.id.btnSalir)
+        val btnLogout = findViewById<ImageButton>(R.id.btnLogout)
 
         // Inicializa el MediaPlayer con el archivo de audio
         mediaPlayer = MediaPlayer.create(this, R.raw.info)
@@ -37,6 +39,17 @@ class InicioActivity : AppCompatActivity() {
             // Inicia la actividad Actividades
             val intent = Intent(this, Actividades::class.java)
             startActivity(intent)
+        }
+        btnLogout.setOnClickListener{
+            // Logout (borrar shared preferences)
+            SaveSharedPreference.clearUserName(this)
+            //Redirigir a login
+            Toast.makeText(this, "Logout exitoso", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Login::class.java)
+            //mediaPlayer = MediaPlayer.create(this, R.raw.login)
+            startActivity(intent)
+            //Terminar inicio
+            finish()
         }
     }
 

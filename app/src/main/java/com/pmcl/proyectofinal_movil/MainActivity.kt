@@ -19,13 +19,19 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //Instrucciones de login
-        //mediaPlayer = MediaPlayer.create(this, R.raw.info)
 
-        //inicia Login
-        val intent = Intent(this, Login::class.java)
-        //mediaPlayer.start()
-        startActivity(intent)
+        if(SaveSharedPreference.getUserName(this).length == 0) {
+            // Inicia Login
+            val intent = Intent(this, Login::class.java)
+            //mediaPlayer = MediaPlayer.create(this, R.raw.login)
+            startActivity(intent)
+        }
+        else { //usuario loggeado
+            mediaPlayer = MediaPlayer.create(this, R.raw.info)
+            val intent = Intent(this, InicioActivity::class.java)
+            startActivity(intent)
+            mediaPlayer.start()
+        }
 
         // Termina MainActivity para que no se vuelva a mostrar
         finish()

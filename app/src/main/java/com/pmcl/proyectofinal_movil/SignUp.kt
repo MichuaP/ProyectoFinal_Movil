@@ -63,6 +63,10 @@ class SignUp : AppCompatActivity() {
         // Crear usuario
         val resultado = db.createUser(alias, password, edadInt)
         if (resultado) {
+
+            //Guardar usuario en sharedPreference
+            SaveSharedPreference.setUserName(this, alias)
+
             //Exito, navegar a la siguiente pantalla
             Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show()
             mediaPlayer = MediaPlayer.create(this, R.raw.info)
