@@ -24,6 +24,7 @@ class Actividades : AppCompatActivity() {
         val btnmemorama = findViewById<ImageButton>(R.id.btnMemorama)
         val btnCompletarPalabra = findViewById<ImageButton>(R.id.btnCompletaPalabra)
         val btnContar = findViewById<ImageButton>(R.id.btnContar)
+        val btnFormar = findViewById<ImageButton>(R.id.btnFormar)
         val btnBack = findViewById<ImageButton>(R.id.btnVolver)
 
         // Inicializa el MediaPlayer con el archivo de audio
@@ -73,7 +74,14 @@ class Actividades : AppCompatActivity() {
             val intent = Intent(this, ContarObjetosActivity::class.java)
             startActivity(intent)
         }
+        btnFormar.setOnClickListener {
+            // Reproduce el audio al presionar el botón
+            //mediaPlayer5.start()
 
+            // Inicia la actividad formar palabras
+            val intent = Intent(this, FormarActivity::class.java)
+            startActivity(intent)
+        }
         btnBack.setOnClickListener{
             finish()
         }

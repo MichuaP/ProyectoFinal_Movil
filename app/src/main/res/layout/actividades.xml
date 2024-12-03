@@ -249,23 +249,23 @@
                 android:layout_marginStart="16dp">
 
                 <ImageButton
-                    android:id="@+id/btnX"
+                    android:id="@+id/btnFormar"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:background="@drawable/rounded_corner"
-                    android:contentDescription="X" />
+                    android:contentDescription="Forma las palabras" />
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:src="@drawable/gramatica"
+                    android:src="@drawable/formarpal"
                     android:layout_gravity="center"
                     android:alpha="0.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="X"
+                    android:text="Forma la\n palabra"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"

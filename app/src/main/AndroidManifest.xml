@@ -51,6 +51,8 @@
         <activity android:name=".CompletarActivity"></activity>
 
         <activity android:name=".ContarObjetosActivity"></activity>
+
+        <activity android:name=".FormarActivity"></activity>
     </application>
 
 </manifest>
