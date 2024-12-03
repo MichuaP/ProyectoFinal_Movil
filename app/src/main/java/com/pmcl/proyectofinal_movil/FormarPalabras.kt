@@ -108,11 +108,6 @@ class FormarPalabras(context: Context, attrs: AttributeSet) : View(context, attr
         // Establecer la palabra y las opciones de letras
         palabraActual = obtenerPalabraAleatoria().toUpperCase() // Convertir a mayúsculas
         letrasPosibles = generarLetrasPosibles()
-        // Reproducir el sonido del animal correspondiente a la palabra actual
-        val sonidoAnimalResId = sonidosPalabras[palabraActual]
-        sonidoAnimalResId?.let {
-            MediaPlayer.create(context, it).start()
-        }
     }
 
     // Método para cambiar la imagen asociada a la palabra

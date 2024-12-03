@@ -16,6 +16,7 @@ class Actividades : AppCompatActivity() {
     private lateinit var mediaPlayer3: MediaPlayer
     private lateinit var mediaPlayer4: MediaPlayer
     private lateinit var mediaPlayer5: MediaPlayer
+    private lateinit var mediaPlayer6: MediaPlayer
     //Variables de la base de datos
     private lateinit var db: DBSQLite
     //Mapear actividades
@@ -50,6 +51,7 @@ class Actividades : AppCompatActivity() {
         mediaPlayer3 = MediaPlayer.create(this, R.raw.memorama)
         mediaPlayer4 = MediaPlayer.create(this, R.raw.instrucccomp)
         mediaPlayer5 = MediaPlayer.create(this, R.raw.instrucccontar)
+        mediaPlayer6 = MediaPlayer.create(this, R.raw.instrucformar)
 
         btnOrdenarVocales.setOnClickListener {
             // Reproduce el audio al presionar el botón
@@ -93,7 +95,7 @@ class Actividades : AppCompatActivity() {
         }
         btnFormar.setOnClickListener {
             // Reproduce el audio al presionar el botón
-            //mediaPlayer5.start()
+            mediaPlayer6.start()
 
             // Inicia la actividad formar palabras
             val intent = Intent(this, FormarActivity::class.java)

@@ -18,20 +18,11 @@
             android:gravity="start"
             android:layout_gravity="start">
 
-            <ImageButton
-                android:id="@+id/btnVolver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/back_button"
-                android:src="@drawable/baseline_arrow_back_24" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Inicia sesión"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="140dp"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:textSize="20sp"
