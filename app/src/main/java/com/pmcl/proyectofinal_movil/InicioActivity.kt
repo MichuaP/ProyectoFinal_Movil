@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class InicioActivity : AppCompatActivity() {
-    // Declara el MediaPlayer como una variable de clase
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +21,14 @@ class InicioActivity : AppCompatActivity() {
         val btnLogout = findViewById<ImageButton>(R.id.btnLogout)
 
         // Inicializa el MediaPlayer con el archivo de audio
-        mediaPlayer = MediaPlayer.create(this, R.raw.info)
+        mediaPlayer = MediaPlayer.create(this, R.raw.infol)
 
         btnSalir.setOnClickListener {
             finish()
         }
         btnInfo.setOnClickListener {
+            val intent = Intent(this, Informacion::class.java)
+            startActivity(intent)
             mediaPlayer.start()
         }
         btnLecciones.setOnClickListener {

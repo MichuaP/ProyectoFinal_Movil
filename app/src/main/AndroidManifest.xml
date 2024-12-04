@@ -56,6 +56,10 @@
 
         <activity android:name=".Login"></activity>
         <activity android:name=".SignUp"></activity>
+
+        <activity android:name=".Informacion"></activity>
+        <activity android:name=".Help"></activity>
+        <activity android:name=".Desarrolladoras"></activity>
     </application>
 
 </manifest>

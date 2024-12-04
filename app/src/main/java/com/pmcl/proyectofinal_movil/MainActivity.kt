@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         if(SaveSharedPreference.getUserName(this).length == 0) {
             // Inicia Login
+            mediaPlayer = MediaPlayer.create(this, R.raw.instruccinicio)
             val intent = Intent(this, Login::class.java)
-            //mediaPlayer = MediaPlayer.create(this, R.raw.login)
             startActivity(intent)
+            mediaPlayer.start()
         }
         else { //usuario loggeado
             mediaPlayer = MediaPlayer.create(this, R.raw.info)

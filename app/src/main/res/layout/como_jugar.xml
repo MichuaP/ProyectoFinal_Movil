@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo2">
+
+    <!-- Botón Volver y Logo -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#2A000000"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/back_button"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="-55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="9dp"
+            android:src="@drawable/ayuda" />
+    </LinearLayout>
+
+    <!-- Título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A000000"
+        android:paddingBottom="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Cómo Jugar?"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Contenedor de dos LinearLayouts uno encima del otro -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+
+        <!-- Primer Rectángulo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_corner"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <!-- Izquierda: Contenido -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+            android:orientation="vertical"
+            android:paddingEnd="8dp"
+            android:gravity="center_vertical|center_horizontal">
+
+            <!-- Título con imagen -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/leccionesi" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Lecciones"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="#470F87" />
+            </LinearLayout>
+
+            <!-- Descripción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡Explora y aprende! Repite las lecciones todas las veces que quieras. Cada una te ayudará a conocer y dominar los números y las letras de manera divertida y sencilla."
+                android:textSize="14dp"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Derecha: Imagen -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+        android:src="@drawable/leccionesc"
+        android:scaleType="centerCrop" />
+    </LinearLayout>
+
+    <!-- Segundo Rectángulo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_corner"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- Izquierda: Contenido -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+        android:orientation="vertical"
+        android:paddingEnd="8dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <!-- Título con imagen -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/actividadesi" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Actividades"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#470F87" />
+        </LinearLayout>
+
+        <!-- Descripción -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¡Pon a prueba lo que has aprendido! Realiza las actividades para descubrir cuánto sabes. Cada una te ayudará a confirmar tus conocimientos de forma divertida y emocionante."
+            android:textSize="14dp"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Derecha: Imagen -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+    android:src="@drawable/actividadesc"
+    android:scaleType="centerCrop" />
+</LinearLayout>
+    </LinearLayout>
+    </TableLayout>

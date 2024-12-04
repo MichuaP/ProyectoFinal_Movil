@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo2">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#2A000000"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/back_button"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="-55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="9dp"
+            android:src="@drawable/programming" />
+    </LinearLayout>
+
+    <!-- Título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A000000"
+        android:paddingBottom="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Creadoras"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="¡GRACIAS!"
+            android:textColor="#470F87"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            android:textAlignment="center">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Nosotras somos"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Paula Michelle Cruz Lira\nNadia Monstserrat Acosta Miranda"
+            android:textSize="18dp"
+            android:textColor="#470F87"
+            android:textAlignment="center">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Estudiantes de la"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Universidad Autónoma de Aguascalientes"
+            android:textSize="16dp"
+            android:textColor="#470F87"
+            android:textAlignment="center">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Para la materia de"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Programación de Dispositivos Móviles"
+            android:textSize="16dp"
+            android:textColor="#470F87"
+            android:textAlignment="center">
+        </TextView>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/team"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+</TableLayout>
